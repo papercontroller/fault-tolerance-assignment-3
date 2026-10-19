@@ -1,0 +1,29 @@
+[
+  {
+    "experiment_id": 1,
+    "injected_failure": "One Registration replica failure",
+    "detection_time": "2s",
+    "recovery_time": "8s",
+    "user_impact": "Zero downtime. Load balancer routes 100% traffic to healthy replica-2. Slight latency spike (+15ms).",
+    "status": "RECOVERED",
+    "timestamp": "2026-10-19T18:22:50+05:00"
+  },
+  {
+    "experiment_id": 2,
+    "injected_failure": "All Registration replicas failing",
+    "detection_time": "1s",
+    "recovery_time": "15s",
+    "user_impact": "Temporary service outage (HTTP 503). Registration unavailable for 15s until pods pass readiness probe.",
+    "status": "RECOVERED",
+    "timestamp": "2026-10-19T18:22:50+05:00"
+  },
+  {
+    "experiment_id": 3,
+    "injected_failure": "Database unavailability (Primary node crash)",
+    "detection_time": "3s",
+    "recovery_time": "12s",
+    "user_impact": "Transient errors (HTTP 500/504) on write operations for 12s during automated failover to Standby DB.",
+    "status": "RECOVERED",
+    "timestamp": "2026-10-19T18:22:50+05:00"
+  }
+]
